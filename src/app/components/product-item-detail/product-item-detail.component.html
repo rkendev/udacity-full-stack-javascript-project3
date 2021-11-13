@@ -1,0 +1,29 @@
+<div *ngIf="product !== undefined" class="app-product-item-detail">
+    <img *ngIf="product !== undefined" [src]="product.url">
+</div>
+
+<table class="table" cellspacing="2" *ngIf="product !== undefined">
+    <tr>
+      <td><label class="label" for="name">Product</label></td>
+      <td><div style="overflow:hidden">{{ product.name }}</div></td>
+    </tr>
+    <tr>
+        <td><label class="label" for="name">Price</label></td>
+        <td><div style="overflow:hidden">{{ product.price }}</div></td>
+    </tr>
+    <tr>
+        <td><label class="label" for="name">Description</label></td>
+        <td><div style="overflow:hidden">{{ product.description }}</div></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <div style="overflow:hidden"> 
+                <select class="select-input" [(ngModel)]="selectedQuantity" (ngModelChange)="selectedQuantityChanged($event)">
+                    <option *ngFor="let option of options">{{option}}</option>
+                </select>
+                <button type="button" class="btn btn-danger" class="btn btn-danger" type="button" (click)="addItemToCart()">Add to Cart</button>
+            </div>
+        </td>
+    </tr>
+</table>

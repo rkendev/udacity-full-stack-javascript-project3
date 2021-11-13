@@ -1,0 +1,9 @@
+<div class="product-container">
+    <img src="{{ product.url }}" class="product-image" [routerLink] = "[product.name]">
+    <p>{{ product.name }}</p>
+    <p>{{ product.price }}</p>
+      <select class="select-input" [(ngModel)]="selectedQuantity" (ngModelChange)="selectedQuantityChanged($event)">
+      <option *ngFor="let option of options">{{option}}</option>
+    </select>
+    <button type="button" class="btn btn-danger" class="btn btn-danger" type="button" (click)="addItemToCart()">Add to Cart</button>
+</div>

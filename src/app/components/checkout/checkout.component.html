@@ -1,0 +1,66 @@
+<form name="myForm">
+<table class="table" cellspacing="2" >
+  <tr>
+    <td class=".special_column"><label class="label" for="name">Name</label></td>
+    <td class=".special_column"><div style="overflow:hidden"><input type="text" class="formInput" id="name"
+           required
+           [(ngModel)]="model.name" name="name"></div></td>
+  </tr>
+  <tr>
+    <td><label class="label" for="deliveryAddres">Delivery Address</label></td>
+    <td><div style="overflow:hidden"><input type="text"  class="formInput" id="deliveryAddres"
+           [(ngModel)]="model.deliveryAddres" name="deliveryAddres"></div></td>
+  </tr>
+  <tr>
+    <td><label class="label" for="power">Billing Address</label></td>
+    <td><div style="overflow:hidden"><input type="text"  class="formInput" id="billingAddres"
+           [(ngModel)]="model.billingAddres" name="billingAddres"></div></td>
+  </tr>
+  <tr>
+    <td><label class="label" for="power">State</label></td>
+    <td><div style="overflow:hidden"><input type="text"  class="formInput" id="state"
+           [(ngModel)]="model.state" name="state"></div></td>
+  </tr>
+  <tr>
+    <td><label class="label" for="power">Payment Method</label></td>
+    <td><div style="overflow:hidden"><select class="formInput"  id="paymentMethod"
+            required
+            [(ngModel)]="model.paymentMethod" name="paymentMethod">
+      <option *ngFor="let pm of paymentMethods" [value]="pm">{{pm}}</option>
+    </select></div></td>
+  </tr>
+  </table>
+</form>
+
+  <table class="table" cellspacing="2" *ngIf="cartItems">
+    <tr>
+      <th class="th">Name</th>
+      <th class="th">Price</th>
+      <th class="th">Quantity</th>
+      <th class="th">Total Price</th>
+    </tr>
+    <tr *ngFor="let item of cartItems">
+      <td>{{ item.name }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.quantity }}</td>
+  
+      <td class="text-right">
+        <h5 class="font-medium m-b-30">{{ item.quantity* item.price }}</h5>
+      </td>
+    </tr> 
+    <tr>
+        <td class="b-0"><b>Order Total</b></td>
+        <td></td>
+        <td></td>
+        <td class="text-right">
+          <h5 class="font-medium m-b-30">{{totalCostOfItems}}</h5>
+        </td>
+    </tr>                              
+  </table>   
+  <table class="table" cellspacing="2">
+    <tr>
+      <td><button class="btn btn-danger" (click)="confirmOrder()" >Checkout</button></td>
+      
+
+    </tr>    
+  </table>  

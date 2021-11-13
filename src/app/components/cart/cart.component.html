@@ -1,0 +1,98 @@
+<section>  
+              <table class="center" cellspacing="2" *ngIf="cartItems">
+                <tr>
+                  <th class="b-0">Name</th>
+                  <th class="b-0">Price</th>
+                  <th class="b-0"></th>
+                  <th class="b-0">Quantity</th>
+                  <th class="b-0"></th>
+                  <th class="b-0 text-right">Total Price</th>
+                  <th class="b-0"></th>
+                </tr>
+                <tr *ngFor="let item of cartItems">
+                  <td>
+                    <div class="formContentContainer">
+                      <label for="x"></label>
+                      <input type="text"  class="formInput" id="x"
+                             [(ngModel)]="item.name" name="x" readonly>
+                    </div></td>
+                  <td> 
+                    <div class="formContentContainer">
+                    <label for="x"></label>
+                    <input type="text"  class="formInput" id="x"
+                           [(ngModel)]="item.price" name="x" readonly>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="formContentContainer">
+                      <label for="x"></label>
+                    <input type="button" class=".valueChangeButton" name="decrement" (click)="decreamentQTY(item.id,1)" value="-">
+                    </div>
+                   </td>
+                  <td> 
+                    <div class="formContentContainer">
+                      <label for="x"></label>
+                      <input type="text"  class="formInput" id="x"
+                             [(ngModel)]="item.quantity" name="x" readonly>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="formContentContainer">
+                      <label for="x"></label>
+                      <input type="button" class=".valueChangeButton" name="increment" (click)="increamentQTY(item.id,1)" value="+">
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="formContentContainer">
+                    <label for="x"></label>
+                    <input type="text"  class="formInput" id="x"
+                           [(ngModel)]="item.price * item.quantity" name="x" readonly>
+                          </div>
+                  </td>
+
+                  <td>
+                    <div class="formContentContainer">
+                      <label for="x"></label>
+                      <button type="button" class="btn btn-danger" class="btn btn-danger" type="button" (click)="removeItem(item.id)" >Remove</button>
+                    </div>
+                  </td>
+
+                </tr>
+                <tr>
+                  <td class="b-0"><b>Total</b></td>
+                  <td class="b-0"><b></b></td>
+                  <td class="b-0"><b></b></td>
+                  <td class="b-0"><b></b></td>
+                  <td class="b-0"><b></b></td>
+                  <td>
+                    <div class="form-group">
+                    <label for="x"></label>
+                    <input type="text"  class="formInput" id="x"
+                           [(ngModel)]="totalCostOfItems" name="x" readonly>
+                          </div>
+                  </td>
+                </tr>                
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td colspan="4" align="right">
+                    <button type="button" class="btn btn-danger" class="btn btn-danger" type="button" [disabled]=formButtonEnabled() (click)="emptyCart()" >Empty Cart</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td colspan="4" align="right">
+                   <button class="btn btn-danger" type="button" [disabled]=formButtonEnabled()  [routerLink] = "['/components/checkout']">Checkout</button>
+                  </td>
+                </tr>                
+              </table>
+
+  </section>
