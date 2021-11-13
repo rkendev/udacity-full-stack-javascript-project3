@@ -7,13 +7,13 @@ MyStore is the the final project for the third course of the Udacity Full Stack 
 An Angular application has been build to demonstate the functionality of a simple shopping cart.The application lets the
 user view list of available products to purchase, add them to a shopping cart, and ultimately complete the checkout process. There are 5 views in total.
 
-\product list path. User can see a list of all products. User can add products to cart in this view. When user click on the image, it will take user to the product detail page.
-\product/:productName product item detail page. User can see the detail of a product and add the quantity to cart.
-\cart cart page. On this page an empty list or a list of products is displayed which the user would like to order. Each orderline display the name ,price, total price. 
+- \product list path. User can see a list of all products. User can add products to cart in this view. When user click on the image, it will take user to the product detail page.
+- \product/:productName product item detail page. User can see the detail of a product and add the quantity to cart.
+- \cart cart page. On this page an empty list or a list of products is displayed which the user would like to order. Each orderline display the name ,price, total price. 
 On each orderline there are buttons which can be used to increase or decrease the quantity or remove the a product from the cart. The user can click on the 'Empty Cart' 
 button to remove all items from the shppoing cart or the 'Checkout' button to start the checkout process. 
-\checkout. On this page the user can supply a name, delivery address, billing andress and payment method. The 'Checkout' button can be used to complete the order
-\confirmation confirmation page. After user successfully submit their payment information, user will see this page caontaining the details entered on the checkout page and 
+- \checkout. On this page the user can supply a name, delivery address, billing andress and payment method. The 'Checkout' button can be used to complete the order
+- \confirmation confirmation page. After user successfully submit their payment information, user will see this page caontaining the details entered on the checkout page and 
 total cost of all products ordered.
 
 ## Installation
